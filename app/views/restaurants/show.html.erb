@@ -1,0 +1,23 @@
+<div class="container">
+  <div>
+    <h1>Découvrez... <%= @restaurant.name %>!</h1>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <%= @restaurant.name %>
+    </div>
+    <div class="card-body">
+      <%= @restaurant.address %>
+      <%= @restaurant.phone_number %> <br>
+      Category : <%= @restaurant.category %> <br>
+      <% @restaurant.reviews.each do |r| %>
+      Comment: <%= r.content %>
+      Rating: <%= r.rating%> <br>
+      <% end %>
+      <%= link_to "Add review", new_restaurant_review_path(@restaurant), class: "btn btn-primary mt-3"%>
+    </div>
+  </div>
+  <div>
+    <i class="far fa-arrow-alt-circle-left"></i> <%= link_to "Go back", restaurants_path(@restaurants), class: "btn btn-warning mt-3" %>
+  </div>
+</div>

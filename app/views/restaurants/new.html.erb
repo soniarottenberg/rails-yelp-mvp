@@ -1,0 +1,11 @@
+<div class="container">
+  <div>
+    <h1>Add your fav restaurant<3</h1>
+  </div>
+  <%= simple_form_for [@restaurant] do |f|%>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :category %>
+  <%= f.submit "Add you restaurant", class: "btn btn-primary" %>
+  <% end %>
+</div>

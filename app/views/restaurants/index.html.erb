@@ -1,0 +1,14 @@
+<div class="navbar bg-light border">
+  <p>Bienvenue sur... le Yelp du pauvre</p>
+</div>
+<div class="container mt-3">
+  <ul class="list-group list-group-flush">
+    <% @restaurants.each do |restaurant|%>
+    <li class="list-group-item rounded">
+      <%= link_to restaurant.name, restaurant_path(restaurant) %>
+    </li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Add your favorite restaurant!", new_restaurant_url, class: "btn btn-warning mt-3" %>
+</div>
